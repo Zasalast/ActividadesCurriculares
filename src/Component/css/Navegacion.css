@@ -1,0 +1,34 @@
+
+.navegacion {
+ width: 100%;
+ height: 40px;
+    display: flex;
+
+    justify-content: space-between;
+
+    margin-top: 1rem;
+
+    padding-bottom: 3rem;
+
+    background: #29b6f6;
+    text-align: center;
+}
+
+.navegacion a {
+    margin: 20px;
+    text-align: center;
+    font-size: 1rem;
+
+    color: white;
+
+    text-decoration: none;
+
+    text-transform: uppercase;
+
+}
+
+.navegacion a.activo {
+
+    color: #ffce00;
+
+}

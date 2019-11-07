@@ -1,13 +1,249 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+html {
+
+  min-height: 100%;
+
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
+body {
+
+  font-family: arial,helvetica, sans-serif;
+
+  height: 100%;
+
+  margin: 0;
+
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#e570e7+0,c85ec7+47,a849a3+100;Pink+3D+%233 */
+
+  background: #80d8ff; /* Old browsers */
+
+  background: -moz-linear-gradient(top, #81d4fa 0%, #03a9f4 47%, #0288d1 100%); /* FF3.6-15 */
+
+  background: -webkit-linear-gradient(top, #81d4fa 0%,#03a9f4 47%,#0288d1 100%); /* Chrome10-25,Safari5.1-6 */
+
+  background: linear-gradient(to bottom, #81d4fa 0%,#03a9f4 47%,#0288d1 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+
+  background-repeat: no-repeat;
+
+  background-attachment: fixed;
+
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e570e7', endColorstr='#0288d1',GradientType=0 );
+
+  margin-bottom: 10rem;
+
+}
+
+
+
+
+header {
+align-content: center;
+  margin-top: 3rem;
+
+}
+
+header h1 {
+
+  color: white;
+
+}
+.Exportar{
+  top: 0%;
+  width: 20%;
+  position: absolute;
+  top:  200px;
+  right:  50px;
+}
+.titulo-citas  {
+ text-align: center;
+ top: 0%;
+ width: 100%;
+ height: 50px;
+ 
+ font-size: 1.5em;
+ font-style: unset;
+  font-family: sans-serif;
+  border-bottom: 1.5px solid #e1e1e1;
+
+position: absolute;
+  padding-bottom: 3rem;
+
+}
+.lista-citas .media {
+  line-height: 2rem;
+  border-bottom: 1px solid #e1e1e1;
+  border-color: 2rem;
+  padding-bottom: 3rem;
+  padding: 2rem;
+  font-size: 1.0em;
+}
+
+
+
+.lista-citas .media:last-of-type{
+  line-height: 2rem;
+  border-bottom: 0;
+ padding-bottom: 3rem;
+  padding: 2rem;
+  font-size: 1.0em;
+}
+
+.lista-citas .media-body p {
+
+  margin:0;
+  line-height: 2rem;
+}
+.header-center{
+  
+  margin: 0;
+
+  padding: 0;
+  font-size: calc(10px + 2vmin);
+  font-family: sans-serif;
+  min-height: 100%;
+}
+.lista-citas .media-body button {
+  line-height: 2rem;
+  margin-top: 1rem!important;
+
+}
+
+.lista-citas .media-body span {
+
+  font-weight: bold;
+  line-height: 2rem;
+}
+form {
+  border: .5rem solid #81d4fa;
+  background-color: #0091ea;
+  padding: 2rem;
+  font-size: 1.0em;
+}
+form legend {
+  text-align: center;
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin-bottom: 2rem;
+  color: #81d4fa;
+  border: .5rem solid #81d4fa;
+  background-color: #0091ea;
+  text-transform: uppercase;
+}
+
+.input-field {
+  margin-bottom: 2rem;
+  display: flex;
+  align-items: center;
+  font-size: 1.2em;
+ 
+}
+.input-Hora {
+  border-radius: 10px 10px 10px 10px;
+-moz-border-radius: 10px 10px 10px 10px;
+-webkit-border-radius: 10px 10px 10px 10px;
+border: 0px solid #000000;
+  margin-bottom: 2rem;
+  display: flex;
+  align-items: center;
+  font-size: 1.2em;
+ background: #cddc39;
+}
+.input-Fecha {
+  border-radius: 10px 10px 10px 10px;
+-moz-border-radius: 10px 10px 10px 10px;
+-webkit-border-radius: 10px 10px 10px 10px;
+border: 0px solid #000000;
+  background: #ef5350;
+  margin-bottom: 2rem;
+  display: flex;
+  align-items: center;
+  font-size: 1.2em;
+ padding: 2px;
+ margin: 2px;
+}
+.input-field p {
+  margin-bottom: 5rem;
+  padding: 5px;
+  flex: 0 0 150px;
+  font-size: 1.2em;
+  font-weight: bold;
+  
+}
+
+.input-field input[type="email"],
+.input-field input[type="text"],
+.input-field textarea{
+  flex:1;
+  padding: 1rem;font-size: 1.2em;
+}
+.input-field input[type="submit"] {
+  background-color: #09435e;
+  color: white;
+  padding: .5rem 2rem;
+  border: none;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+.input-field input[type="submit"]:hover {
+  cursor: pointer;
+  padding: .5rem 2rem;
+  background-color: #ffce00;
+  color: #81d4fa;
+}
+.enviar {
+  justify-content: flex-end;
+}
+
+.navegacion {
+  width: 100%;
+  height: 40px;
+     display: flex;
+ 
+     justify-content: space-between;
+ 
+     margin-top: 1rem;
+ 
+     padding-bottom: 3rem;
+ 
+     background: #29b6f6;
+     text-align: center;
+ }
+ 
+ .navegacion a {
+     margin: 20px;
+     text-align: center;
+     font-size: 1rem;
+ 
+     color: white;
+ 
+     text-decoration: none;
+ 
+     text-transform: uppercase;
+ 
+ }
+ 
+ .navegacion a.activo {
+ 
+     color: #ffce00;
+ 
+ }
+
+ @media (min-width:480px) {
+  .contenedor-nosotros {
+      display: grid;
+      grid-template-columns: 40% 60%;
+      grid-gap: 1rem;
+  }
+}
+
+.contenedor-nosotros .imagen img {
+  width: 100%;
+}
+.contenedor-nosotros .contenido h2 {
+  border-bottom: 8px solid #ffce00;
+  padding-bottom: 1rem;
+  text-align: left;
+}
+.contenedor-nosotros .contenido p {
+  color: white;
+  line-height: 2rem;
 }
