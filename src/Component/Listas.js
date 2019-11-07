@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Actividad from './Actividad';
 import PropTypes from 'prop-types';
+import Buscador from './Buscador/Buscador';
 
 export default class Listas extends Component {
 
@@ -10,7 +11,9 @@ export default class Listas extends Component {
 
         return (
             <div className="lista-citas">
-
+                <Buscador
+                busqueda={this.props.busquedaActividad}
+                />
                 <div className='lista-citas'>
                  {/*    <div className='titulo-citas'> */}
 

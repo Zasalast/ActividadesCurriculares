@@ -17,7 +17,7 @@ import Buscador from './Buscador/Buscador';
 export default class Router extends Component {
     state = {
         actividades: [],
-        terminoBusqueda:''
+        terminoBusqueda: ''
     }
     componentDidMount() {
         console.log('hola local');
@@ -36,7 +36,7 @@ export default class Router extends Component {
         )
     }
 
-    
+
 
     crearActividad = (nuevaActividad) => {
         const actividades = [...this.state.actividades, nuevaActividad];
@@ -47,14 +47,14 @@ export default class Router extends Component {
 
     eliminarActividad = id => {
         //Leer el state
-   
+
         const actividadesActuales = [...this.state.actividades];
-       
-        
+
+
         //Borrar el elemento del state
         const actividades = actividadesActuales.filter(actividad => actividad.id !== id);
-      
-        
+
+
         //Actualizar el State
         this.setState({
             actividades
@@ -68,28 +68,28 @@ export default class Router extends Component {
           })
       } */
 
-      busquedaActividad =(busqueda) =>{
-        if (busqueda.length >=3) {
+    busquedaActividad = (busqueda) => {
+        if (busqueda.length >= 3) {
             this.setState({
-                terminoBusqueda:busqueda
+                terminoBusqueda: busqueda
             })
         } else {
             this.setState({
-                terminoBusqueda:''
-            })  
+                terminoBusqueda: ''
+            })
         }
     }
     render() {
-        let actividadBusqueda = [...this.state.actividades];
+        let actividades = [...this.state.actividades];
         let busqueda = this.state.terminoBusqueda;
         let resultadoBusqueda = this.state.terminoBusqueda;
- if (busqueda!=='') {
-    resultadoBusqueda=actividadBusqueda.filter(actividadB =>(
-        actividadB.actividadcurricular.toLowerCase().indexOf(busqueda.toLowerCase())!==-1
-        ))
- } else {
-    resultadoBusqueda=actividadBusqueda;
- }
+        if (busqueda !== '') {
+            resultadoBusqueda = actividades.filter(actividadB => (
+                actividadB.actividadcurricular.toLowerCase().indexOf(busqueda.toLowerCase()) !== -1
+            ))
+        } else {
+            resultadoBusqueda = actividades;
+        }
         return (
             <BrowserRouter>
                 <div className="contenedor">
@@ -97,20 +97,20 @@ export default class Router extends Component {
                     <h1><Header titulo={'Administrador de Actividad'} /></h1>
 
                     <Switch>
-                    <Route exact path="/actividades" render={() => (
-                            
+                        <Route exact path="/actividades" render={() => (
+
                             <div>
-                                <Buscador/>
-                                <Exportar/>
-                            <Listas actividades={resultadoBusqueda}
-                            busquedaActividad={this.resultadoBusqueda}
-                                eliminarActividad={this.eliminarActividad}
-                            /> 
+                                {/* <Buscador /> */}
+                                <Exportar />
+                                <Listas actividades={resultadoBusqueda}
+                                    busquedaActividad={this.busquedaActividad}
+                                    eliminarActividad={this.eliminarActividad}
+                                />
                             </div>
-                           
+
                         )} />
-                    
-                    
+
+
                         <Route exact path="/" render={() => (
                             /*  <Listas actividades={this.state.actividades}
                                  eliminarActividad={this.eliminarActividad}
@@ -123,7 +123,7 @@ export default class Router extends Component {
                                 <div className='col-md-6'>
                                     <Listas actividades={resultadoBusqueda}
                                         eliminarActividad={this.eliminarActividad}
-                                        busquedaActividad={this.resultadoBusqueda}
+                                        busquedaActividad={this.busquedaActividad}
                                     />
                                 </div>
                             </div>
@@ -133,7 +133,7 @@ export default class Router extends Component {
                         <Route path="/nosotros" component={Nosotros} />
                         <Route path="/contacto" component={Contacto} />
                         <Route path="/iniciosesion" component={InisiarSesion} />
-                    
+
                         {/*  <Route exact path="/producto/:productoId" render={(props) => {
                                    let idProducto = props.location.pathname.replace('/producto/', '');
                                    return (
@@ -144,7 +144,7 @@ export default class Router extends Component {
                                    )
                               } } /> */}
 
-                     {/*    <Route render={() => (
+                        {/*    <Route render={() => (
                             <Listas actividades={this.state.actividades}
                                 eliminarActividad={this.eliminarActividad}
                             />
