@@ -47,11 +47,14 @@ header h1 {
 
 }
 .Exportar{
-  top: 0%;
-  width: 20%;
+  top: 100%;
+
+  width: 100%;
   position: absolute;
-  top:  200px;
-  right:  50px;
+  margin: 100px;
+  padding: 10px;
+  right:  30%;
+  left: 30%;
 }
 .titulo-citas  {
  text-align: center;

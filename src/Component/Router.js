@@ -114,7 +114,7 @@ export default class Router extends Component {
 
                             <div>
                                 {/* <Buscador /> */}
-                                <Exportar />
+                               
                                 <Listas actividades={resultadoBusqueda}
                                     busquedaActividad={this.busquedaActividad}
                                     eliminarActividad={this.eliminarActividad}

@@ -10,31 +10,45 @@ export default class Actividad extends Component {
     render() {
         const { actividadcurricular, encargado, descripcion, fecha, hora } = this.props.info;
         return (
-            <div className="media mt-3">
-                <div className='media-body'>
-                    <h3 className='mt-0'>
-                        <span> Nombre Actividad:</span>  <p>{actividadcurricular}</p>
+            <tr>
+         <td>
+                        {actividadcurricular}
+         </td>
+                    {/*     </p>
                     </h3>
                     <p className="input-field">
                         <span>Nombre del Encargado: </span>
-                        <p>  {encargado}</p>
+                        <p>   */}
+                       <td> {encargado}</td>
+                       {/*  </p>
                     </p>
                     <p className="input-field">
                         <span> Fecha: </span>
-                        <p className="input-Fecha">{fecha}</p>
+                        <p className="input-Fecha"> */}
+                        <td>  {fecha}</td>
+                      {/*   </p>
                     </p>
                     <p className="input-field">
 
                         <span> Hora: </span>
-                        <p className="input-Hora">{hora}</p>
+                        <p className="input-Hora"> */}
+                        <td>  {hora}</td>
+                    {/*     </p>
                     </p>
                     <p className="input-field">
-                        <span>Descriptión:</span><p>{descripcion}</p>
+                        <span>Descriptión:</span><p> */}
+                        <td>  {descripcion}</td>
+                      {/*   </p>
 
-                    </p>
-                    <button onClick={this.eliminarActividad} className='btn btn-danger'>ELIMINAR</button>
-                </div>
-            </div>
+                    </p> */}
+                    <td>
+                    <button onClick={this.postActividad} className='btn btn-danger'>VER</button>
+                    <button onClick={this.postsActividad} className='btn btn-light'>Posts</button>
+                    <button onClick={this.EditarActividad} className='btn btn-light'>Editar</button>
+                    <button onClick={this.eliminarActividad} className='btn btn-light'>ELIMINAR</button>
+                    </td>
+               
+            </tr>
         );
     }
 
