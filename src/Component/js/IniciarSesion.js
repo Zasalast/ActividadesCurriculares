@@ -2,6 +2,10 @@ import React, { Component } from 'react';
 
 import { Link } from 'react-router-dom';
 const InisiarSesion = () => {
+
+
+
+    
     return (
 
         <form>
@@ -17,7 +21,7 @@ const InisiarSesion = () => {
             </div>
 
             <div className="col-sm-3">
-
+                <button type="submit" onClick="registar()"></button>
                 <input type="submit" value="Enviar" className="btn btn-success w-100"/>
             </div>
         </form>

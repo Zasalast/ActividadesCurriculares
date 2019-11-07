@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
-import Header from './Header'
+import Header from './Header';
+import axios from 'axios';
 /* import Actividades from '../js/Actividades'; */
 /* import Inicio from '../js/Inicio'; */
 
-/* import infoActividad from '../Datos/datos.json'; */
+import infoActividad from '../Component/Datos/datos.json';
 /* import SingleActividad from './SingleActividad'; */
 import Navegacion from './js/Navegacion';
 import Contacto from './js/Contacto';
@@ -13,18 +14,29 @@ import Listas from './Listas';
 import AgregarActividad from './AgregarActividad';
 import InisiarSesion from './js/IniciarSesion';
 import Exportar from './js/Exportar';
-import Buscador from './Buscador/Buscador';
+/* import Buscador from './Buscador/Buscador'; */
+import Registar from './js/Registrar';
 export default class Router extends Component {
     state = {
         actividades: [],
-        terminoBusqueda: ''
+        terminoBusqueda: '',
+        posts:[]
+    }
+    obtenerPost = () => {
+        axios.get(`https://jsonplaceholder.typicode.com/posts`)
+        .then(res =>{
+            this.setState({
+                posts:res.data
+            })
+        })
     }
     componentDidMount() {
-        console.log('hola local');
+        console.log('hola componentDidMount');
         const ActividadesLS = localStorage.getItem('Actividades');
         if (ActividadesLS) {
             this.setState({
-                actividades: JSON.parse(ActividadesLS)
+                actividades: JSON.parse(ActividadesLS),
+                infoActividad :localStorage.getItem('Actividades')
             })
         }
     }
@@ -32,7 +44,8 @@ export default class Router extends Component {
     componentDidUpdate() {
         localStorage.setItem(
             'Actividades',
-            JSON.stringify(this.state.actividades)
+            JSON.stringify(this.state.actividades),
+            
         )
     }
 
@@ -94,7 +107,7 @@ export default class Router extends Component {
             <BrowserRouter>
                 <div className="contenedor">
                     <Navegacion />
-                    <h1><Header titulo={'Administrador de Actividad'} /></h1>
+                    <h1><Header /></h1>
 
                     <Switch>
                         <Route exact path="/actividades" render={() => (
@@ -131,6 +144,8 @@ export default class Router extends Component {
                         )} />
 
                         <Route path="/nosotros" component={Nosotros} />
+                        <Route path="/registar" component={Registar} />
+
                         <Route path="/contacto" component={Contacto} />
                         <Route path="/iniciosesion" component={InisiarSesion} />
 

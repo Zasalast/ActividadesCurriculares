@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
+/* import PropTypes from 'prop-types'; */
 import { NavLink } from 'react-router-dom';
 /* import '../css/Navegacion.css'; */
 import ventass from '../logo192.png';
@@ -7,7 +7,7 @@ export default class Header extends Component {
 
     render() {
         return (
-        <nav className="">
+        <nav >
               <NavLink to={'/'}>
            <img src={ventass}  alt="logo imagen"width="40px" /> 
             
@@ -20,8 +20,8 @@ export default class Header extends Component {
     }
 
 }
-Header.propTypes = {
+/* Header.propTypes = {
     titulo: PropTypes.string.isRequired
-}
+} */
 
 

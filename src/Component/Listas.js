@@ -4,35 +4,51 @@ import PropTypes from 'prop-types';
 import Buscador from './Buscador/Buscador';
 
 export default class Listas extends Component {
-
+    mostrarActividad = () => {
+        const actividades = this.props.actividades;
+        const mensaje = Object.keys(actividades).length === 0 ? 'No hay Actividades' : 'Administra tus Actividades';
+        return (
+            <React.Fragment>
+                {Object.keys(this.props.actividades).map(activi => (
+                    <Actividad
+                        key={activi}
+                        info={this.props.actividades[activi]}
+                        eliminarActividad={this.props.eliminarActividad}
+                    />
+                ))}
+            </React.Fragment>
+        )
+    }
     render() {
         const actividades = this.props.actividades;
         const mensaje = Object.keys(actividades).length === 0 ? 'No hay Actividades' : 'Administra tus Actividades';
 
         return (
-            <div className="lista-citas">
+            <table className="table">
                 <Buscador
-                busqueda={this.props.busquedaActividad}
+                    busqueda={this.props.busquedaActividad}
                 />
-                <div className='lista-citas'>
-                 {/*    <div className='titulo-citas'> */}
+                <thead>
+                    <tr>
+                        <th scope="col">Nombre</th>
+                        <th scope="col">Encargado</th>
+                        <th scope="col">Fecha</th>
+                        <th scope="col">Hora</th>
+                    </tr>
 
-                      {/*   {mensaje} */}
-                 {/*    </div> */}
-                </div>
+
+                  
+                        {/*   {mensaje} */}
+                     
 
 
-                <div className='lista-citas'>
-                    {Object.keys(this.props.actividades).map(activi => (
-                        <Actividad
-                            key={activi}
-                            info={this.props.actividades[activi]}
-                            eliminarActividad={this.props.eliminarActividad}
-                        />
-                    ))}
-                    {/* <Actividad /> */}
-                </div>
-            </div>
+                    <tbody className='lista-citas'>
+
+                        {this.mostrarActividad()}
+
+                    </tbody>
+                </thead>
+            </table>
         );
     }
 }
