@@ -89,7 +89,12 @@ position: absolute;
   padding: 2rem;
   font-size: 1.0em;
 }
-
+.descripcion{
+width: 300px;
+font-display: initial;
+font-size-adjust: none;
+max-width: 400px;
+}
 .lista-citas .media-body p {
 
   margin:0;

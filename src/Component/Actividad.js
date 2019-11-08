@@ -1,14 +1,18 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import {Link} from 'react-router-dom';
 export default class Actividad extends Component {
 
     eliminarActividad = () => {
         console.log(`Eliminar Actividad... ${this.props.info.id}`)
         this.props.eliminarActividad(this.props.info.id);
     }
-
+    editarActividad = () => {
+        console.log(`Eliminar Actividad... ${this.props.info.id}`)
+        this.props.editarActividad(this.props.info.id);
+    }
     render() {
-        const { actividadcurricular, encargado, descripcion, fecha, hora } = this.props.info;
+        const { actividadcurricular, encargado, descripcion, fecha, hora,id } = this.props.info;
         return (
             <tr>
          <td>
@@ -37,15 +41,19 @@ export default class Actividad extends Component {
                     </p>
                     <p className="input-field">
                         <span>Descriptión:</span><p> */}
-                        <td>  {descripcion}</td>
+                        <td>  <p className="descripcion">
+
+                        {descripcion}
+                        </p>
+                        </td>
                       {/*   </p>
 
                     </p> */}
                     <td>
-                    <button onClick={this.postActividad} className='btn btn-danger'>VER</button>
-                    <button onClick={this.postsActividad} className='btn btn-light'>Posts</button>
-                    <button onClick={this.EditarActividad} className='btn btn-light'>Editar</button>
-                    <button onClick={this.eliminarActividad} className='btn btn-light'>ELIMINAR</button>
+                    <Link to={`/actividad/${id}`} className='btn btn-primary'>VER</Link>
+                    
+                    <button onClick={this.editarActividad} className='btn btn-light'>Editar</button>
+                    <button onClick={this.eliminarActividad} className='btn btn-danger'>ELIMINAR</button>
                     </td>
                
             </tr>

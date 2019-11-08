@@ -25,7 +25,7 @@ export default class AgregarActividad extends Component {
         } else {
 
             const nuevaActividad = {
-                id: Math.random() * (20120012 - 1) + 2,
+                id: Math.random() * (2000 - 1) + 2,
                 actividadcurricular,
                 encargado,
                 hora,
