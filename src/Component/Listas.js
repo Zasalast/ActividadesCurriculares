@@ -45,7 +45,7 @@ export default class Listas extends Component {
                         <th scope="col">Encargado</th>
                         <th scope="col">Fecha</th>
                         <th scope="col">Hora</th>
-                        <th scope="col">Descripción</th>
+                       {/*  <th scope="col">Descripción</th> */}
                         <th scope="col">Accion</th>
                     </tr>
 

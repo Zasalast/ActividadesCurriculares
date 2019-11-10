@@ -255,3 +255,42 @@ border: 0px solid #000000;
   color: white;
   line-height: 2rem;
 }
+
+
+
+
+
+
+.header {
+  width: 100%;
+  height: 50px;
+     display: -ms-inline-flexbox;
+ 
+     justify-content: space-between;
+ 
+      margin-top: 1rem;
+ 
+     padding-bottom: 3rem;
+ 
+     /* background: #29b6f6; */
+     text-align: center;
+ }
+ 
+ .header a {
+     margin: 20px;
+     text-align: center;
+     font-size: 1rem;
+ 
+     color: white;
+ 
+     text-decoration: none;
+ 
+     text-transform: uppercase;
+ 
+ }
+ 
+ .header a.activo {
+ 
+     color: #ffce00;
+ 
+ }

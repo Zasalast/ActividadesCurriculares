@@ -53,6 +53,7 @@ export default class Registar extends Component {
             <button type="submit" className="btn btn-success w-100">REGISTAR</button>
             </div>
         </form>
+        <a href="/iniciarsesion"><button >Iniciar Sesion</button></a>
             </div>
         );
     }

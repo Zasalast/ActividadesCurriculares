@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-
+import firebase from "firebase";
 
 import PropTypes from 'prop-types';
 export default class AgregarActividad extends Component {
@@ -32,6 +32,20 @@ export default class AgregarActividad extends Component {
                 fecha,
                 descripcion
             }
+            var db = firebase.firestore();
+    db.collection("Actividades").add({
+        actividadcurricular,
+        encargado,
+        hora,
+        fecha,
+        descripcion
+  })
+  .then(function(docRef) {
+      console.log("Document written with ID: ", docRef.id);
+  })
+  .catch(function(error) {
+      console.error("Error adding document: ", error);
+  });
             //se envia al state para actualizar 
             this.props.crearActividad(nuevaActividad);
             this.setState({ error: false })
