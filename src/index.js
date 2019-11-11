@@ -1,6 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
+import { createStore } from 'redux';
+/* import { ObtenerActividades,BORRAR_ACTIVIDAD,MOSTRAR_ACTIVIDADES } from './Component/Datos/reducers/actividadesReducer';; */
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 import firebase from 'firebase';
@@ -21,7 +23,7 @@ import firebase from 'firebase';
     appId: "1:579782126753:web:460537495138b63c3814e0",
     measurementId: "G-ZDYW7ZP9PL"
   });
-  var db = firebase.firestore();
+/*   var db = firebase.firestore();
   db.collection("users").add({
     first: "Ada",
     last: "Lovelace",
@@ -32,7 +34,7 @@ import firebase from 'firebase';
 })
 .catch(function(error) {
     console.error("Error adding document: ", error);
-});
+}); */
 ReactDOM.render(
 <App />,
  document.getElementById('root')

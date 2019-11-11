@@ -19,8 +19,8 @@ export default class Header extends Component {
     }
 
 }
-Header.propTypes = {
+/* Header.propTypes = {
     titulo: PropTypes.string.isRequired
-}
+} */
 
 

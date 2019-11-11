@@ -1,8 +1,8 @@
 import React, { Component } from "react";
-/* import PropTypes from 'prop-types'; */
+
 import { NavLink } from "react-router-dom";
-/* import '../css/Navegacion.css'; */
-import ventass from "../logo192.png";
+
+
 export default class Header extends Component {
   state = {
     user: null
@@ -29,7 +29,8 @@ export default class Header extends Component {
         <nav className="header">
           
             <NavLink to={"/"}>
-              <img src={ventass} alt="logo imagen" width="40px" />
+              <img src={'https://firebasestorage.googleapis.com/v0/b/actividadescurriculares.appspot.com/o/Imagenes%2Flogo192.png?alt=media&token=0b19104d-beac-4e1e-a29b-d7c38a6e38a2'} alt="logo imagen" width="40px" />
+              {/* <img src={ventass} alt="logo imagen" width="40px" /> */}
             </NavLink>
           
           {/* <button onClick={this.props.renderLoginButton}>Google </button> */}
@@ -47,6 +48,4 @@ export default class Header extends Component {
     }
   }
 }
-/* Header.propTypes = {
-    titulo: PropTypes.string.isRequired
-} */
+

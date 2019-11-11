@@ -38,7 +38,7 @@ export default class AgregarActividad extends Component {
         encargado,
         hora,
         fecha,
-        descripcion
+        descripcion 
   })
   .then(function(docRef) {
       console.log("Document written with ID: ", docRef.id);
@@ -47,8 +47,8 @@ export default class AgregarActividad extends Component {
       console.error("Error adding document: ", error);
   });
             //se envia al state para actualizar 
-            this.props.crearActividad(nuevaActividad);
-            this.setState({ error: false })
+             this.props.crearActividad(nuevaActividad);
+            this.setState({ error: false }) 
         }
 
     }
@@ -140,7 +140,7 @@ export default class AgregarActividad extends Component {
     }
 }
 
-AgregarActividad.propTypes = {
+/* AgregarActividad.propTypes = {
     actividades: PropTypes.array.isRequired,
     eliminarActividad: PropTypes.func.isRequired
-}
+} */

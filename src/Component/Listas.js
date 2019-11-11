@@ -3,6 +3,9 @@ import Actividad from './Actividad';
 import PropTypes from 'prop-types';
 import Buscador from './Buscador/Buscador';
 import Exportar from './js/Exportar';
+//redux
+import {connect} from 'react-redux';
+import {ObtenerActividades} from './Datos/actions/actividadesActions';
 
 export default class Listas extends Component {
     mostrarActividad = () => {
@@ -35,8 +38,8 @@ export default class Listas extends Component {
                   
 
 
-                  
-                        {/*   {mensaje} */}
+                
+                          {mensaje} 
                      
 
 
@@ -60,6 +63,12 @@ export default class Listas extends Component {
         );
     }
 }
+const mapStateToProps =state =>({
+    actividades :state.actividades.actividades
+})
+connect(mapStateToProps, {ObtenerActividades})(Listas);
+
+ 
 Listas.propTypes = {
     actividades: PropTypes.array.isRequired,
     eliminarActividad: PropTypes.func.isRequired

@@ -2,19 +2,16 @@ import React, { Component } from "react";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import Header from "./Header";
 import axios from "axios";
-/* import Actividades from '../js/Actividades'; */
-/* import Inicio from '../js/Inicio'; */
 import firebase from "firebase";
-import actividades from "../Component/Datos/datos.json";
-/* import SingleActividad from './SingleActividad'; */
 import Navegacion from "./js/Navegacion";
 import Contacto from "./js/Contacto";
 import Nosotros from "./js/Nosotros";
 import Listas from "./Listas";
 import AgregarActividad from "./AgregarActividad";
 import IniciarSesion from './js/IniciarSesion';
-import Exportar from "./js/Exportar";
-/* import Buscador from './Buscador/Buscador'; */
+import actividades from "../Component/Datos/datos.json";
+
+
 import Registar from "./js/Registrar";
 import SingleActividad from "./js/SingleActividad";
 import EditarActividad from "./js/EditarActividad";
@@ -110,7 +107,6 @@ export default class Router extends Component {
                       )
                       let ActividadId = {id: res.data.id};
                      const nuevoActividad= Object.assign({}, res.data.Actividad, ActividadId);
-
                      this.setState(prevState => ({
                       Actividades: [...prevState.Actividades, nuevoActividad]
                      }))
@@ -182,11 +178,7 @@ export default class Router extends Component {
     });
   }; 
 
-  /*   componentWillMount() {
-          this.setState({
-              productos: infoActividad
-          })
-      } */
+    
 
   busquedaActividad = busqueda => {
     if (busqueda.length >= 3) {

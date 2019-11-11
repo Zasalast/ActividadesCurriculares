@@ -7,18 +7,15 @@ import {Provider} from 'react-redux';
 import store from './store';
 export default class App extends Component {
  
-
   render() {
-    const firebase = require("firebase");
+    /* const firebase = require("firebase"); */
 // Required for side-effects
 require("firebase/firestore");
     return (
     <Provider store={store}>
       <div className="container">
         <Router />
-      {/* <p>
-        {this.renderLoginButton()}
-      </p> */}
+    
       </div>
       </Provider>
     );
